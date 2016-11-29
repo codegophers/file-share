@@ -124,7 +124,9 @@ Before running the tests make sure you are serving the app via `ng serve`. -->
 
 ## Deploying to Heroku
 
-Run `git push heroku master` to deploy to Heroku.
+1. Create the app `heroku init`
+2. Tell it to install dev dependencies `heroku config:set NPM_CONFIG_PRODUCTION=false`
+3. Push to deploy `git push heroku master`
 
 ## Further help
 
