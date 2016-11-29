@@ -65,6 +65,10 @@ service firebase.storage {
 }
 ```
 
+Also set up your app to use email/password authentication and manually
+add the users you want, as well as selecting which are admins, by setting
+`admins/<user uuid>/true` in the database.
+
 ## Database Schema
 All data is stored in the Firebase Realtime Database. The uploaded files
 are stored in FirebaseStorage.
