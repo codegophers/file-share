@@ -4,7 +4,8 @@
   "license": "MIT",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve -prod",
+    "start": "ng serve",
+    "start-heroku": "http-server dist",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
@@ -26,6 +27,7 @@
     "bootstrap": "^4.0.0-alpha.5",
     "core-js": "^2.4.1",
     "firebase": "^3.6.1",
+    "http-server": "^0.9.0",
     "rxjs": "5.0.0-beta.12",
     "ts-helpers": "^1.1.1",
     "zone.js": "^0.6.23"
