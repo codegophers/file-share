@@ -11,18 +11,9 @@ npm install
 ```
 
 
-Then set your firebase credentials (we have to put them in a file and
-  [can't use environmental variables](https://github.com/angular/angular-cli/issues/2625#issuecomment-253868675)):
+Then edit the Firebase credentials in `./src/app/firebaseConfig.ts`
+([we can't use environmental variables](https://github.com/angular/angular-cli/issues/2625#issuecomment-253868675)):
 
-```bash
-echo "export default {
-  apiKey: '...',
-  authDomain: '...',
-  databaseURL: '...',
-  storageBucket: '...',
-  messagingSenderId: '...'
-};" > ./src/app/firebaseConfig.ts
-```
 
 Set the Firebase Realtime Database security rules to:
 
@@ -121,18 +112,18 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+<!-- ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Before running the tests make sure you are serving the app via `ng serve`. -->
 
-## Deploying to Github Pages
+## Deploying to Heroku
 
-Run `ng github-pages:deploy` to deploy to Github Pages.
+Run `git push heroku master` to deploy to Heroku.
 
 ## Further help
 
