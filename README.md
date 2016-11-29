@@ -73,6 +73,43 @@ service firebase.storage {
 }
 ```
 
+## Database Schema
+All data is stored in the Firebase Realtime Database. The uploaded files
+are stored in FirebaseStorage.
+
+This is an example database with two feeds, each with one file in them,
+and one admin:
+
+```json
+{
+  "admins" : {
+    "nflo1kYrfoOYFO9ZArHy5WQoZcP2" : true
+  },
+  "feeds" : {
+    "-KXi6C9zmoJ7LrFghgDQ" : "new",
+    "-KXiGpdz87_CrD4JwJfE" : "test",
+  },
+  "files" : {
+    "-KXiFJIy5vN5Z-1FQjEH" : {
+      "feed" : "-KXi6C9zmoJ7LrFghgDQ",
+      "name" : "test-a1c55-export.json",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/test-a1c55.appspot.com/o/-KXiFJIy5vN5Z-1FQjEH%2Ftest-a1c55-export.json?alt=media&token=0879984e-2179-4b71-9e57-c18f4e72f2b1"
+    },
+    "-KXiFMjDfh0N-vFZM8rT" : {
+      "feed" : "-KXiGpdz87_CrD4JwJfE",
+      "name" : "download.html",
+      "url" : "https://firebasestorage.googleapis.com/v0/b/test-a1c55.appspot.com/o/-KXiFMjDfh0N-vFZM8rT%2Fdownload.html?alt=media&token=779902bf-6d3b-41d5-9cd8-c823351a8b8b"
+    }
+  }
+}
+```
+
+Both the feeds and files have IDs that are [auto-created and alphanumerically
+ordered by time](https://firebase.googleblog.com/2014/04/best-practices-arrays-in-firebase.html#using-push-to-create-unique-ids).
+
+We store each file at `${id}/${name}` in Firebase Storage. We have to keep the
+last part of it's path to be `name`, or else the name will be wrong when downloaded.
+
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
