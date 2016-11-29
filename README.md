@@ -7,6 +7,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 First install the dependencies:
 
 ```bash
+npm install -g angular-cli
 npm install
 ```
 
