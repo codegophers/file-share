@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+.fs-editable {
+  cursor: text !important;
+}
+
+.fs-button {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  outline: 0 !important;
+  border: 0 !important;
+}

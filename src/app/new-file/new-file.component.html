@@ -1,0 +1,21 @@
+<form class="form-inline bg-faded" [style.padding.px]="10">
+  <div class="form-group" [class.has-success]="kind === 'C'" [class.has-danger]="kind === 'E'">
+    <input
+      type="file"
+      class="form-control-file"
+      #fileInput
+      [class.form-control-success]="kind == 'C'"
+      [class.form-control-danger]="kind == 'E'"
+      (change)="markForChange()"
+    >
+    <div class="form-control-feedback">
+      <div *ngIf="kind === 'N'">
+        <div class="text-xs-center" id="example-caption-1">Uploading&hellip; {{value * 100 | number:"1.0-0"}}%</div>
+        <progress class="progress"  [attr.value]="value * 100" max="100">
+        </progress>
+      </div>
+      <span *ngIf="kind === 'E'">Error: {{value}}</span>
+    </div>
+  </div>
+  <button type="submit" (click)="onClick()" class="btn btn-primary" [class.disabled]="!getFile() || kind === 'N'">Upload file</button>
+</form>

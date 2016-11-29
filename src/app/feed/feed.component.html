@@ -1,0 +1,19 @@
+<li class="nav-item" >
+  <button
+    *ngIf="user.admin | async"
+    class="btn btn-lg btn-link text-danger fs-button"
+    type="button"
+    (click)="remove()"
+  >&times;</button>
+  <button
+    class="btn btn-link nav-link fs-button"
+
+    [class.feed-black]="selected | async"
+    (click)="select()"
+
+    [class.fs-editable]="user.admin | async"
+    [attr.contenteditable]="user.admin | async"
+    #name
+    (blur)="rename(name)"
+  >{{ feed.name }}</button>
+</li>

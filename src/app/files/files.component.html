@@ -1,0 +1,13 @@
+<h2>Files</h2>
+<app-new-file></app-new-file>
+<table class="table">
+  <thead>
+    <tr>
+      <th>File</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let file of fs.files | async" [app-file]="file">
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,5 @@
+<h2>Feeds</h2>
+<ul class="nav">
+  <app-new-feed *ngIf="user.admin | async"></app-new-feed>
+  <app-feed [feed]="feed" *ngFor="let feed of feeds | async" ></app-feed>
+</ul>

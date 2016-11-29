@@ -1,0 +1,12 @@
+.new-feed-button {
+  float: left !important;
+}
+
+.new-feed-input {
+  border: none !important;
+  width: 80% !important;
+  padding-left: 6px !important;
+  padding-right: 0 !important;
+  padding-bottom: 0 !important;
+  padding-top: 16px !important;
+}

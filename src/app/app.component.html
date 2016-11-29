@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <div *ngIf="loggedIn === null">
+    Loading...
+  </div>
+  <app-login *ngIf="loggedIn === false"></app-login>
+  <app-dashboard *ngIf="loggedIn"></app-dashboard>
+</div>

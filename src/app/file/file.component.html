@@ -1,0 +1,9 @@
+<td>
+  <button
+    *ngIf="user.admin | async"
+    class="btn btn-lg btn-link text-danger fs-button"
+    type="button"
+    (click)="remove()"
+  >&times;</button>
+  <a [attr.href]="file.url" target="_blank">{{file.name}}</a>
+</td>

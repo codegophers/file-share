@@ -1,0 +1,16 @@
+<li class="nav-item" >
+  <div class="input-group">
+    <button
+      class="btn btn-lg btn-link text-success fs-button new-feed-button"
+      type="button"
+      (click)="add()"
+    >+</button>
+    <input
+      class="fs-editable form-control new-feed-input"
+      type="text"
+      placeholder="New feed..."
+      [formControl]="nameControl"
+      (keyup.enter)="add()"
+    />
+  </div>
+</li>
