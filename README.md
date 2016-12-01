@@ -50,11 +50,12 @@ Set the Firebase Realtime Database security rules to:
 }
 ```
 
-Set Firebase Storage security rules to:
+Set Firebase Storage security rules to (making sure to replace
+  `<app-name>` with the existing value in the rules):
 
 ```
 service firebase.storage {
-  match /b/test-a1c55.appspot.com/o {
+  match /b/<app-name>.appspot.com/o {
     match /{allPaths=**} {
       // Only allow uploads of any image file that's less than 250MB
       allow write: if request.auth != null
