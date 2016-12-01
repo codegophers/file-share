@@ -17,6 +17,7 @@ import { FilesService } from './files.service';
 import { FileComponent } from './file/file.component';
 import { NewFileComponent } from './new-file/new-file.component';
 import { UserService } from './user.service';
+import { AuthService } from './auth.service'
 import firebaseConfig from './firebaseConfig';
 
 
@@ -48,7 +49,8 @@ const myFirebaseAuthConfig = {
   providers: [
     FeedsService,
     FilesService,
-    UserService
+    UserService,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

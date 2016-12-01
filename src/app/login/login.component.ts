@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AngularFire } from 'angularfire2';
+
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +12,13 @@ export class LoginComponent {
   emailInvalid = false;
   passwordInvalid = false;
 
-  constructor(public af: AngularFire) {}
+  constructor(private auth: AuthService) {}
+
   login(email: any, password: any) {
     this.emailInvalid = !email.value;
     this.passwordInvalid = !password.value;
     if (email.value && password.value) {
-      this.af.auth.login({
-        email: email.value,
-        password: password.value,
-      }).catch(error => {
+      this.auth.login(email.value, password.value).catch(error => {
         password.value = '';
         this.error = error.message;
       });

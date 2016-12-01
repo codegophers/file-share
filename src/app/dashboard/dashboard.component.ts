@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { AngularFire } from 'angularfire2';
 
 import { FeedsService } from '../feeds.service';
 import { UserService } from '../user.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +10,9 @@ import { UserService } from '../user.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
-  constructor(private fs: FeedsService, private af: AngularFire, private user: UserService) {}
+  constructor(private fs: FeedsService, private auth: AuthService, private user: UserService) {}
 
   logOut() {
-    this.af.auth.logout();
+    this.auth.logout();
   }
 }
