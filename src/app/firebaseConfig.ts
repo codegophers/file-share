@@ -1,7 +1,7 @@
 export default {
-  apiKey: 'AIzaSyA6WKBPakwbnx5ozBHCKSnwaaEMGnXqMHw',
-  authDomain: 'test-a1c55.firebaseapp.com',
-  databaseURL: 'https://test-a1c55.firebaseio.com',
-  storageBucket: 'test-a1c55.appspot.com',
-  messagingSenderId: '610206224228'
+  apiKey: 'AIzaSyCb1UK_VEsGXhYAe3iI5mTdrm83d_8Dl3o',
+  authDomain: 'file-share-890fe.firebaseapp.com',
+  databaseURL: 'https://file-share-890fe.firebaseio.com',
+  storageBucket: 'file-share-890fe.appspot.com',
+  messagingSenderId: '903868047800'
 };
