@@ -20,6 +20,14 @@ export class FeedComponent implements OnInit {
     this.selected = this.fs.selectedID.map(id => id === this.feed.id);
   }
 
+  // for some reason contenteditable was not picking up space commands,
+  // so we add them manually.
+  fixSpace(event) {
+    if (event.key === ' ') {
+      document.execCommand('insertHTML', false, ' ');
+    }
+  }
+
   select() {
     this.fs.select(this.feed.id);
   }

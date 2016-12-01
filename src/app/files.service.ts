@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AngularFire, FirebaseListObservable, FirebaseApp } from 'angularfire2';
 import * as firebase from 'firebase';
 
@@ -60,7 +60,7 @@ export class FilesService {
     this.files = this.afFiles
       .map(
         files => files
-          .map(({$key, name, feed, url}) => ({id: $key, name, feed, url}))
+          .map(({$key, name, feed, url, comment, likes}) => ({id: $key, name, feed, url, comment, likes}))
           // remove files without URL saved yet
           .filter(({url}) => url)
           // first files should be first
@@ -72,12 +72,12 @@ export class FilesService {
   /*
   Returns a progress observable, that goes form 0 to 1 as the file uploads.
   */
-  addFile(file: File): Observable<number> {
+  addFile(file: File, comment: string): Observable<number> {
     const feedID = this.fs.selectedID.value;
     const name = file.name;
 
     // create an entry for the file in the database
-    return thenableToObservable(this.afFiles.push({feed: feedID, name}))
+    return thenableToObservable(this.afFiles.push({feed: feedID, name, comment, likes: 0}))
 
       // save the file using that ID/key and the name of the file
       .map(({key}) => ({
@@ -99,5 +99,9 @@ export class FilesService {
   remove(f: File_) {
     this.afFiles.remove(f.id);
     this.fileRef(f).delete();
+  }
+
+  like(f: File_) {
+    this.afFiles.update(f.id, {likes: f.likes + 1});
   }
 }

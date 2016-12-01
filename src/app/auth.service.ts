@@ -12,6 +12,7 @@ export class AuthService {
   @StorageSync() private email: string | null = null;
   @StorageSync() private password: string | null = null;
   @StorageSync() private loginDate: number | null = null;
+  @StorageSync() private hasLiked: string[] = [];
 
 
   constructor(private af: AngularFire) {
@@ -55,6 +56,18 @@ export class AuthService {
     this.email = null;
     this.password = null;
     this.loginDate = null;
+    this.hasLiked = [];
+  }
+
+  hasLikedFile(id: string) {
+    return this.hasLiked.indexOf(id) !== -1;
+  }
+
+  likeFile(id: string) {
+    console.log(id, this.hasLiked);
+    if (!this.hasLikedFile(id)) {
+      this.hasLiked = this.hasLiked.concat([id]);
+    }
   }
 
   logout() {

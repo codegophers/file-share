@@ -18,7 +18,11 @@ export class LoginComponent {
     this.emailInvalid = !email.value;
     this.passwordInvalid = !password.value;
     if (email.value && password.value) {
-      this.auth.login(email.value, password.value).catch(error => {
+      let emailValue = email.value;
+      if (emailValue.indexOf('@') === -1) {
+        emailValue = emailValue + '@dummydomain.com';
+      }
+      this.auth.login(emailValue, password.value).catch(error => {
         password.value = '';
         this.error = error.message;
       });

@@ -1,0 +1,22 @@
+.fs-delete-padding {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+.fs-heart-padding {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+
+.fs-heart {
+  font-size: xx-large;
+  position: relative;
+  top: 0.15em;
+  padding-right: 0.2em;
+}
+
+
+.fs-click {
+  cursor: pointer !important;
+}

@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 .fs-editable {
   cursor: text !important;
+  font-size: larger !important;
 }
 
 .fs-button {
@@ -8,4 +9,17 @@
   padding-right: 0 !important;
   outline: 0 !important;
   border: 0 !important;
+  font-size: large !important;
+}
+
+.fs-button-icon {
+  outline: 0 !important;
+  border: 0 !important;
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-right: 0.1em !important;
+  font-size: xx-large !important;
+  position: relative !important;
+  top: -0.1em !important;
 }

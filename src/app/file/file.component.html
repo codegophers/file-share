@@ -1,9 +1,17 @@
-<td>
+<td [class.fs-delete-padding]="user.admin | async">
   <button
     *ngIf="user.admin | async"
-    class="btn btn-lg btn-link text-danger fs-button"
+    class="btn btn-link text-danger fs-button-icon"
     type="button"
     (click)="remove()"
   >&times;</button>
   <a [attr.href]="file.url" target="_blank">{{file.name}}</a>
+</td>
+<td>
+  {{file.comment}}
+</td>
+<td class="fs-heart-padding">
+  <span *ngIf="canLikeFile " (click)="like()" class="fs-heart fs-click">♥</span>
+  <span *ngIf="!canLikeFile" class="fs-heart">♥</span>
+  {{file.likes}}
 </td>

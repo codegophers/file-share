@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, ChangeDetectorRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, OnInit, ChangeDetectorRef } from '@angular/core';
 import {Subscription} from 'rxjs';
 
 
@@ -17,12 +17,13 @@ export class NewFileComponent implements OnInit {
 
 
   @ViewChild('fileInput') fileInput;
+  @ViewChild('commentInput') commentInput;
 
   constructor(private fs: FilesService, private fs_: FeedsService, private cdr: ChangeDetectorRef) {}
   ngOnInit() {
     this.fs_.selectedID.do(_ => {
       this.resetState();
-      this.resetFileInput();
+      this.resetForm();
       this.markForChange();
     });
   }
@@ -35,8 +36,13 @@ export class NewFileComponent implements OnInit {
     return this.fileInput.nativeElement.files[0];
   }
 
-  resetFileInput() {
+  getComment() {
+    return this.commentInput.nativeElement.value;
+  }
+
+  resetForm() {
     this.fileInput.nativeElement.value = '';
+    this.commentInput.nativeElement.value = '';
   }
 
   resetState() {
@@ -50,8 +56,8 @@ export class NewFileComponent implements OnInit {
 
   onClick() {
     if (this.getFile()) {
-      this.subscription = this.fs.addFile(this.getFile())
-        .finally(() => this.resetFileInput())
+      this.subscription = this.fs.addFile(this.getFile(), this.getComment())
+        .finally(() => this.resetForm())
         .materialize()
         .subscribe(
           ({value, kind}) => {

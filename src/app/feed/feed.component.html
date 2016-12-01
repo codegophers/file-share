@@ -1,7 +1,7 @@
 <li class="nav-item" >
   <button
     *ngIf="user.admin | async"
-    class="btn btn-lg btn-link text-danger fs-button"
+    class="btn btn-link text-danger fs-button-icon"
     type="button"
     (click)="remove()"
   >&times;</button>
@@ -10,7 +10,7 @@
 
     [class.feed-black]="selected | async"
     (click)="select()"
-
+    (keypress)="fixSpace($event)"
     [class.fs-editable]="user.admin | async"
     [attr.contenteditable]="user.admin | async"
     #name

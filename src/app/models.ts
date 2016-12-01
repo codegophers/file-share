@@ -8,4 +8,6 @@ export interface File {
   readonly name: string;
   readonly feed: Feed;
   readonly url: string;
+  readonly comment: string;
+  readonly likes: number;
 }
