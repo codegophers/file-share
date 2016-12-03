@@ -1,3 +1,7 @@
+<div class="fs-header">
+  <h1>Kollaborrate</h1>
+  <div>A Columbia Business School shared database with resources to help you succeed!</div>
+</div>
 <div class="row">
   <form class="form-signin">
     <h2 class="form-signin-heading">Please sign in</h2>
@@ -9,7 +13,7 @@
       <label for="inputPassword" class="sr-only">Password</label>
       <input #password type="password" id="inputPassword"  class="form-control" placeholder="Password" required="">
     </div>
-    <small class="form-text text-danger">{{error}}</small>
+    <small class="form-text text-danger fs-error">{{error}}</small>
     <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="login(email, password)">Sign in</button>
   </form>
 </div>

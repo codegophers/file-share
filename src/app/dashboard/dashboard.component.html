@@ -1,5 +1,6 @@
 
-<nav class="navbar navbar-light">
+<nav class="navbar navbar-light bg-faded">
+  <h1 class="navbar-brand">Kollaborrate – Together, we can help each other achieve more!</h1>
   <ul class="nav navbar-nav">
     <li class="nav-item active float-xs-right">
       <a class="nav-link" href="#" (click)="logOut()">
@@ -10,10 +11,10 @@
   </ul>
 </nav>
 <div class="row">
-  <div class="col-sm-3">
+  <div class="col-sm-3 col-md-2">
     <app-feeds></app-feeds>
   </div>
-  <div class="col-sm-9">
+  <div class="col-sm-9 col-md-10">
     <app-files *ngIf="(fs.selectedID | async) !== null "></app-files>
   </div>
 </div>

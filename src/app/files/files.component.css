@@ -1,0 +1,15 @@
+.file {
+  width: 28%;
+}
+
+.comment {
+  width: 50%;
+}
+
+.likes {
+  width: 77px;
+}
+
+.fs-table {
+  table-layout: fixed;
+}

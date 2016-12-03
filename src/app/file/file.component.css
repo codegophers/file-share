@@ -20,3 +20,7 @@
 .fs-click {
   cursor: pointer !important;
 }
+
+.cell {
+  overflow: auto;
+}

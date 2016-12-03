@@ -1,4 +1,4 @@
-<td [class.fs-delete-padding]="user.admin | async">
+<td [class.fs-delete-padding]="user.admin | async" class="cell">
   <button
     *ngIf="user.admin | async"
     class="btn btn-link text-danger fs-button-icon"
@@ -7,10 +7,10 @@
   >&times;</button>
   <a [attr.href]="file.url" target="_blank">{{file.name}}</a>
 </td>
-<td>
+<td class="cell">
   {{file.comment}}
 </td>
-<td class="fs-heart-padding">
+<td class="fs-heart-padding cell">
   <span *ngIf="canLikeFile " (click)="like()" class="fs-heart fs-click">♥</span>
   <span *ngIf="!canLikeFile" class="fs-heart">♥</span>
   {{file.likes}}
